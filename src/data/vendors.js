@@ -1,0 +1,101 @@
+export const SAMPLE_VENDORS = [
+  {
+    image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
+    badge: "TOP RATED",
+    rating: "4.9",
+    title: 'גן האירועים "התמרים"',
+    subtitle: "קיסריה והכרמל",
+    location: "קיסריה",
+    category: "אולם שמחות",
+    tags: ["אולם שמחות", "גן ירוק"],
+    priceRange: "₪800–₪1,200 לאורח",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1594938298603-b8968a9b2a48?w=600&q=80",
+    badge: null,
+    rating: "5.0",
+    title: "סטודיו פאוורבייב – צלום אווטרים",
+    subtitle: "תל אביב ומרכז הארץ",
+    location: "תל אביב",
+    category: "צילום",
+    tags: ["צילום שמחות", "וידאו"],
+    priceRange: "₪4,500–₪8,000",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=600&q=80",
+    badge: "מומלץ",
+    rating: "4.8",
+    title: 'קייטרינג "טעמים של שמחה"',
+    subtitle: "שירות לכל הארץ",
+    location: "תל אביב",
+    category: "קייטרינג",
+    tags: ["קייטרינג", "מגוון תפריטים"],
+    priceRange: "₪180–₪280 לאורח",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80",
+    badge: null,
+    rating: "4.7",
+    title: 'להקת "נגינה ושמחה"',
+    subtitle: "מוזיקה חיה לאירועים",
+    location: "ירושלים",
+    category: "מוזיקה",
+    tags: ["מוזיקה חיה", "להקה"],
+    priceRange: "₪6,000–₪12,000",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1571266028243-d220c6a7d580?w=600&q=80",
+    badge: "HOT",
+    rating: "4.9",
+    title: 'DJ אורן – מוזיקה לחתונות',
+    subtitle: "ניסיון של 10 שנים",
+    location: "חיפה",
+    category: "DJ",
+    tags: ["DJ", "אלקטרוני"],
+    priceRange: "₪3,500–₪6,000",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1487530811015-780ad25fbefd?w=600&q=80",
+    badge: null,
+    rating: "4.8",
+    title: 'סטודיו "פרח ועלה" – עיצוב פרחוני',
+    subtitle: "עיצוב אולם ושולחנות",
+    location: "רמת גן",
+    category: "פרחים",
+    tags: ["פרחים", "עיצוב"],
+    priceRange: "₪4,000–₪9,000",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1594938298603-b8968a9b2a48?w=600&q=80",
+    badge: "2024",
+    rating: "5.0",
+    title: 'בוטיק "לבן ענן" – שמלות כלה',
+    subtitle: "עיצוב ייחודי ואישי",
+    location: "הרצליה",
+    category: "שמלה",
+    tags: ["שמלות כלה", "עיצוב אישי"],
+    priceRange: "₪6,000–₪14,000",
+  },
+];
+
+// Helper: convert a registered vendor user → VendorCard data shape
+
+export function userToVendorCard(u) {
+  // Prefer cover image, then first gallery image, then avatar, then default
+  const cardImage = u.coverImage || u.galleryImages?.[0] || u.avatar ||
+    "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80";
+  return {
+    title: u.businessName || `${u.firstName} ${u.lastName}`,
+    subtitle: u.description ? u.description.slice(0, 60) + (u.description.length > 60 ? "..." : "") : u.city || "",
+    image: cardImage,
+    badge: "ספק מאומת",
+    rating: null,
+    location: u.city || "",
+    category: u.category || "",
+    tags: [u.category || ""].filter(Boolean),
+    priceRange: null,
+    phone: u.phone || "",
+    email: u.email || "",
+    isRegisteredVendor: true,
+  };
+}

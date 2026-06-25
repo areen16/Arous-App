@@ -1,0 +1,7 @@
+.profile-tab-btn {
+  transition: background 0.15s, color 0.15s;
+}
+.profile-tab-btn:hover {
+  background: #FCE4EC;
+  color: #C2185B;
+}

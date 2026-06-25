@@ -1,0 +1,6 @@
+.vp-gallery-img {
+  border-radius: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.vp-gallery-img:hover { opacity: 0.85; }

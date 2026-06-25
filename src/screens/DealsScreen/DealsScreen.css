@@ -1,0 +1,7 @@
+@media (min-width: 768px) {
+  .deals-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+}

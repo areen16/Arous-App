@@ -1,0 +1,9 @@
+.auth-input:focus {
+  border-color: #C2185B !important;
+  box-shadow: 0 0 0 3px rgba(194,24,91,0.1);
+}
+.auth-btn-primary {
+  transition: opacity 0.2s, transform 0.1s;
+}
+.auth-btn-primary:hover { opacity: 0.9; }
+.auth-btn-primary:active { transform: scale(0.98); }

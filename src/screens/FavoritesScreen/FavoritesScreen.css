@@ -1,0 +1,7 @@
+@media (min-width: 768px) {
+  .fav-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+}
