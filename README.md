@@ -123,7 +123,7 @@ npm run dev
 
 ## Screenshot
 
-
+![Home Page](HOMEpage.png)
 
 
 ---
