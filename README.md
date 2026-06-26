@@ -125,6 +125,12 @@ npm run dev
 
 ![Home Page](HOMEpage.png)
 
+---
+
+## ERD 
+
+![Home Page](ERD-AROSAPP.png)
+
 
 ---
 
