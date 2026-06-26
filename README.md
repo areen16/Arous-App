@@ -120,7 +120,17 @@ npm run dev
 - Responsive Design
 
 ---
-
+## External Services & Integrations
+ 
+| Service | Type | Purpose |
+|---|---|---|
+| **Vercel** | Hosting / CI-CD | Frontend hosting and automatic deployment from GitHub |
+| **WhatsApp (deep link)** | External link | Contact vendors directly via `https://wa.me/...` — no API, just a URL redirect |
+| **LocalStorage (browser)** | Client-side storage | Stores users, vendors, and favorites locally in the browser instead of a database |
+ 
+> **Note:** This is a frontend-only MVP. There is no backend server or external database. All data is stored in the user's browser (LocalStorage) and is not shared between devices or users.
+ 
+---
 ## Screenshot
 
 ![Home Page](HOMEpage.png)
@@ -129,7 +139,7 @@ npm run dev
 
 ## ERD 
 
-![Home Page](ERD-AROSAPP.png)
+![Home Page](supabase-schema-qxnrhyavteuxmfbisfcg.png)
 
 
 ---
